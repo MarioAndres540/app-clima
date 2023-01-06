@@ -4,43 +4,95 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles/main.css" />
     <title>App clima</title>
   </head>
   <body>
-    <aside>
+    <!--Menu-->
+    <aside class="left-sidebar">
         <nav>
-            <section>
+            <section class="left-sidebar__logo">
                 <a> 
                     <img src="src/img/logo.png">
                 </a>
             </section>
-            <ul>
-                <li>
+            <ul class="left-sidebar__menu">
+                <li class="left-sidebar__nav-item">
                     Colombia
                 </li>
-                <li>
+                <li class="left-sidebar__nav-item">
                     España
                 </li>
-                <li>
+                <li class="left-sidebar__nav-item">
                     Mexico
                 </li>
             </ul>
         </nav>
     </aside>
-    <main>
-        <section>
+    <!--TemperatureCards-->
+    <main class="main-container">
+        <section class="weather-section">
             <article class="weather-card">
-                <div class="weather-card_location">
-                    <h3 class="weather-card_country">Colombia</h3>
-                    <h2 class="weather-card_city">Medellin</h2>
-                    <p class="weather-card_status">Thunder</p>
+                <div class="weather-card__location">
+                    <h3 class="weather-card__country">Colombia</h3>
+                    <h2 class="weather-card__city">Medellin</h2>
+                    <p class="weather-card__status">Thunder</p>
                 </div>
-                <div class="weather-card_temperature">
-                    <img src="src/img/thunder_icon.png" alt="weather_icon">
-                    <p class="weather-card_grades">20°c</p>
+                <div class="weather-card__temperature">
+                    <img class="weather-card__icon" src="src/img/thunder_icon.png" alt="weather_icon">
+                    <p class="weather-card__grades">20°c</p>
+                </div>
+            </article>
+            <article class="weather-card">
+                <div class="weather-card__location">
+                    <h3 class="weather-card__country">Colombia</h3>
+                    <h2 class="weather-card__city">Medellin</h2>
+                    <p class="weather-card__status">Thunder</p>
+                </div>
+                <div class="weather-card__temperature">
+                    <img class="weather-card__icon" src="src/img/thunder_icon.png" alt="weather_icon">
+                    <p class="weather-card__grades">20°c</p>
+                </div>
+            </article>
+            <article class="weather-card">
+                <div class="weather-card__location">
+                    <h3 class="weather-card__country">Colombia</h3>
+                    <h2 class="weather-card__city">Medellin</h2>
+                    <p class="weather-card__status">Thunder</p>
+                </div>
+                <div class="weather-card__temperature">
+                    <img class="weather-card__icon" src="src/img/thunder_icon.png" alt="weather_icon">
+                    <p class="weather-card__grades">20°c</p>
+                </div>
+            </article>
+            <article class="weather-card">
+                <div class="weather-card__location">
+                    <h3 class="weather-card__country">Colombia</h3>
+                    <h2 class="weather-card__city">Medellin</h2>
+                    <p class="weather-card__status">Thunder</p>
+                </div>
+                <div class="weather-card__temperature">
+                    <img class="weather-card__icon" src="src/img/thunder_icon.png" alt="weather_icon">
+                    <p class="weather-card__grades">20°c</p>
                 </div>
             </article>
         </section>
     </main>
+
   </body>
 </html>
+
+
+
+<!--con display grid mostar dos card por linea, con display grid generar un espaciado entre las cards de 1 rem
+-->
+
+<!--añadir un borde derecho al side bar -->
+
+<!--añadir un pading al logo-->
+
+<!--Consulta como funcionan los pre procesadores como scss,sass-->
+
+<!--Como funciona webpack-->
+
+<!--montar los cambios en github utilizando git-->

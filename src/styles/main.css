@@ -1,0 +1,81 @@
+html,
+body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #f5e9e9;
+}
+
+/*structural styles begin*/
+.main-container {
+    flex-grow: 1;
+}
+/*structural styles end*/
+
+/*
+left sidebar begin
+*/
+.left-sidebar{
+    width: 16.875rem;
+}
+
+.left-sidebar__logo img {
+    width: 100%;
+
+}
+
+.left-sidebar__menu {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.left-sidebar__nav-item {
+    color: #3f3f3f;
+    padding: 1rem;
+    margin: 0.5rem 0;
+}
+
+/*
+left sidebar end
+*/
+
+/*
+weather card begin
+*/
+.weather-card {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: #147ffa;
+    padding: .5rem;
+}
+
+.weather-card__country {
+    margin: 0;
+}
+
+.weather-card__city {
+    margin: 0;
+}
+
+.weather-card__status {
+    margin: 0;
+}
+
+.weather-card__grades {
+    margin: 0;
+}
+
+.weather-card__icon {
+    width: 6rem;
+}
+
+.weather-section {
+    display: grid;
+}
+
+/*
+weather card end
+*/
