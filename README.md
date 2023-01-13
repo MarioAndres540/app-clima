@@ -4,6 +4,7 @@ secuencia de comandos para hacer git push
 2) git commit -m "mensaje"
 3) git push
 
+*Tip:* Antes de empezar cualquier cambio, hacer ``git pull`` para traer los cambios que hayan en el remote del repositorio.
 
 # Actividad para 19 de Enero
 
