@@ -4,11 +4,14 @@ body {
     width: 100%;
     height: 100%;
     background-color: #f5e9e9;
+    margin-top: 10px;
+
 }
 
 /*structural styles begin*/
 .main-container {
     flex-grow: 1;
+    flex-wrap: wrap;
 }
 /*structural styles end*/
 
@@ -17,6 +20,11 @@ left sidebar begin
 */
 .left-sidebar{
     width: 16.875rem;
+    border-radius: 20px;
+    border: outset 1px black;
+    margin-right: 10px;   
+    box-shadow: 5px 5px 5px #3f3f3f;
+ 
 }
 
 .left-sidebar__logo img {
@@ -50,6 +58,8 @@ weather card begin
     color: #ffffff;
     background-color: #147ffa;
     padding: .5rem;
+    margin-block-end: 1rem;
+    box-shadow: 5px 5px 5px #3f3f3f;
 }
 
 .weather-card__country {
@@ -62,18 +72,27 @@ weather card begin
 
 .weather-card__status {
     margin: 0;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 .weather-card__grades {
     margin: 0;
+    display: flex;
+    justify-content: end;
 }
 
 .weather-card__icon {
     width: 6rem;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .weather-section {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 /*
