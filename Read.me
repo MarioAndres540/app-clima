@@ -3,3 +3,381 @@ secuencia de comandos para hacer git push
 1) git add .
 2) git commit -m "mensaje"
 3) git push
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Qué es Sass 
+
+Sass es un procesador CSS. 
+
+Un preprocesador CSS es una herramienta que nos permite generar, de manera automática,  
+
+hojas de estilo, añadiéndoles características que no tiene CSS, y que son propias de los lenguajes de programación, como pueden ser variables,  
+
+funciones, selectores anidados, herencia, etcétera. 
+
+
+Estas características de los procesadores nos permiten, además, que el CSS que se genera sea más fácil de mantener y más reutilizable. 
+
+  
+Ventajas de utilizar Sass 
+
+El uso de una herramienta como Sass proporciona una serie de ventajas, como son las siguientes: 
+
+Reduce el tiempo para crear y mantener el CSS. 
+
+
+Permite tener una organización modular de los estilos, lo cual es vital para proyectos grandes. 
+
+  
+Proporciona estructuras avanzadas propias de los lenguajes de programación, como variables, listas, funciones y estructuras de control. 
+
+  
+Permite generar distintos tipos de salida, comprimida, normal o minimizada, 
+trabajando tanto en desarrollo como en producción, además se hace una forma muy fácil. 
+
+  
+Permite vigilar los ficheros, de tal manera que, si ha habido un cambio en la hoja de estilos, se regenera automáticamente (modo watch). 
+
+  
+Tiene muy pocas dependencias, sobre todo la nueva versión, que es dart-sass.  
+
+En las anteriores versiones se dependía de muchas librerías de Ruby y era un poco engorroso de instalar,  
+
+pero con la nueva versión, la instalación es muy fácil. 
+
+  
+Existen muchas herramientas asociadas, muchas librerías hechas con Sass y una comunidad muy importante de usuarios. 
+
+  
+Desventajas de utilizar Sass 
+
+Como todo, Sass tiene algunas desventajas, que son extensibles a cualquier otro preprocesador que se utilice: 
+
+Hay que aprender a utilizar una nueva herramienta, lo que para algunos supone una desventaja. 
+
+  
+Hay un tiempo de consumo en el proceso de generación o compilación del CSS, 
+sobre todo si es el archivo SCSS es muy grande. No es mucho tiempo, pero sí que existe esa pequeña demora. 
+
+Tiene una sintaxis más compleja que CSS. 
+
+Ejemplo de uso de Sass 
+
+A continuación, veremos un pequeño ejemplo de Sass, dónde podemos ver los elementos básicos de este preprocesador CSS,  
+
+como estructuras repetitivas, variables, funciones o parámetros: 
+
+.row { 
+
+        @include flex_mixin: 
+
+} 
+
+    /// Número de elementos máximos que voy a tener a lo ancho del layout 
+
+    /// @group layout 
+
+    $num_elementos: 8; 
+
+    ///Función que devuelve la anchura correspondiente al elemento 
+
+    @function anchura_col($i) { 
+
+        @return (100 / $num_elementos)*$i ; 
+
+        } 
+
+    ///Bucle para generar las clases para tamaños medios 
+
+    @for $i from 1 through $num_elementos { 
+
+        .row > .col#{$i} { 
+
+            width: #{anchura_col($i)} + “%”; 
+
+        } 
+
+    } 
+
+Podemos ver que hay muchos elementos, pero tienen una sintaxis muy similar a CSS, añadiendo potencialidades de lenguaje de programación.  
+
+Una vez que ejecutamos nuestro fichero SCSS, se generaría un fichero CSS de salida de forma automática. 
+
+ --------------------------------------------------------------------------------------------------------------------------------------------------
+
+Que es  scss? 
+
+scss es un fichero con extencion css, pero tiene las cualidades de sass, la sintaxis es muy parecida al de css, la de sass es mas compleja,  
+
+a scss se le puede agregar funciones variables entre otros 
+
+SASS es el pre-procesador y la sintaxis al completo, mientras que SCSS es la sintaxis de CSS pero con todas las ventajas de SASS. 
+Ahora que ya está clara la diferencia entre SASS y SCSS vamos a ver todas las características que hace que SASS sea mucho más potente que CSS 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+¿Qué es y para qué sirve Webpack? 
+
+Webpack es un module bundler , es decir, un empaquetador de módulos. hablamos que muchos archivos vienen a ser unos pocos, 
+al final. Generalmente estos archivos van a representar módulos, cuando de Javascript se trata. 
+Cada módulo representa un conjunto de código que cumple con un objetivo determinado. 
+
+ 
+
+Módulos dependen de otros, y esta gestión de dependencias es posible gracias a algún module system de Javascript 
+(es decir, una especificación sobre cómo importar y exportar estos módulos). 
+
+Webpack permite optimizar todo este proceso: 
+
+Gestión de dependencias entre módulos 
+
+Minificar, comprimir y unir nuestro código 
+
+Solicitar archivos según se requiera 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+MODELO DE CAJA: El modelo de caja CSS es un módulo CSS que define cajas rectangulares, 
+incluyendo sus rellenos y márgenes, que son generadas para los elementos y que se disponen de acuerdo al modelo de formato visual.
+
+Referencia
+Propiedades
+Propiedades que controlan el flujo del contenido en una caja.
+
+    box-decoration-break (en-US)
+    box-sizing
+    overflow
+    overflow-x (en-US)
+    overflow-y
+
+Propiedades que controlan el tamaño de una caja.
+
+    height
+    width
+    max-height
+    max-width (en-US)
+    min-height
+    min-width
+
+Propiedades que controlan los márgenes de una caja.
+
+    margin
+    margin-bottom
+    margin-left (en-US)
+    margin-right
+    margin-top (en-US)
+
+Propiedades que controlan los rellenos de una caja
+
+    padding
+    padding-bottom
+    padding-left (en-US)
+    padding-right (en-US)
+    padding-top
+
+Otras propiedades
+
+    box-shadow
+    visibility
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+¿Qué es el Responsive Design?
+
+El Responsive Design o diseño adaptativo es la técnica que se usa en la actualidad para tener una misma web adaptada a las diferentes plataformas
+ que nos brinda la tecnología: ordenador, tablet, Smartphone, iPad, Kindle y, en resumen, todas las resoluciones de pantalla existentes. 
+
+ CSS media queries
+
+Las media queries (en español "consultas de medios") son útiles cuando deseas modificar tu página web o aplicación en 
+función del tipo de dispositivo (como una impresora o una pantalla) o de características y parámetros específicos 
+(como la resolución de la pantalla o el ancho del viewport del navegador).
+
+Se utilizan para:
+
+    Aplicar estilos condicionales con las reglas-at @media e @import de CSS.
+    Indicar medios específicos en los elementos <link>, <source> y otros elementos HTML.
+    Testear y monitorizar los estados de los medios usando los métodos de javascript Window.matchMedia() y MediaQueryList.addListener().
+
+Sintaxis
+
+Las media queries consisten de un tipo de medio opcional y una o más expresiones de características de medios. 
+Varias consultas se pueden combinar utilizando operadores lógicos. No distinguen entre mayúsculas y minúsculas.
+
+El resultado de la consulta es "verdadero" cuando el tipo de medio (si se especifica) coincide con el 
+dispositivo en el que se está mostrando el documento y todas las expresiones en el media query son "verdaderas". En este caso, 
+se aplica los estilos correspondientes, siguiendo las reglas usuales de cascada.
+
+Las consultas sobre tipos de medios desconocidos son siempre falsas.
+
+<!-- CSS media query on a link element -->
+<link rel="stylesheet" media="(max-width: 800px)" href="example.css" />
+
+<!-- CSS media query within a style sheet -->
+<style>
+@media (max-width: 600px) {
+  .facet_sidebar {
+    display: none;
+  }
+}
+</style>
+
+Media Types
+
+Los Media Types (tipos de medios) describen la categoría general de un dispositivo. Excepto cuando se utilizan los operadores lógicos not o only, 
+el tipo de medio es opcional y será interpretada como all.
+
+all
+
+    Apto para todos los dispositivos.
+print
+
+    Destinado a material impreso y visualización de documentos en una pantalla en el modo de vista previa de impresión.
+screen
+
+    Destinado principalmente a las pantallas.
+speech
+
+    Destinado a sintetizadores de voz.
+
+
+Tamaños de pantalla comunes
+
+    Móvil: 360 x 640
+    Móvil: 375 x 667
+    Móvil: 360 x 720
+    iPhone X: 375 x 812
+    Pixel 2: 411 x 731
+    Tableta: 768 x 1024
+    Un ordenador portátil: 1366 x 768
+    Un ordenador portátil o desktop de alta resolución: 1920 x 1080
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+¿Por que usar rem en vez de px?
+
+A diferencia de PX, las unidades relativas como %, EM y REM se adaptan mejor al diseño responsivo y también ayudan a cumplir 
+con los estándares de accesibilidad. Las unidades relativas escalan mejor en diferentes dispositivos porque pueden escalar 
+hacia arriba y hacia abajo según el tamaño de otro elemento.
+
+¿Cuándo debería usar una unidad sobre otra?
+
+En última instancia, no existe una respuesta perfecta para esta pregunta. En general, 
+a menudo es mejor elegir una de las unidades relativas en lugar de PX para que tu página web tenga la mejor 
+oportunidad de representar un diseño responsivo. Sin embargo, elije PX si necesitas asegurarte de que un elemento nunca 
+cambie de tamaño en ningún punto de interrupción y permanezca igual independientemente de si un usuario 
+ha elegido un tamaño predeterminado diferente. Las unidades PX garantizan resultados consistentes incluso si eso no es ideal.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+¿Qué es una Petición HTTP (y Cómo Funciona)?
+
+Piensa en una petición HTTP como si tu navegador se conectara al servidor y le pidiera un recurso específico o le enviara datos. 
+Hay varios tipos de métodos de petición HTTP, que modifican completamente el tipo de respuesta que obtienes del servidor. Los más comunes son:
+
+    GET. Es el método de petición HTTP más utilizado con diferencia. Una petición GET solicita al servidor una información o recurso concreto. 
+    Cuando te conectas a un sitio web, tu navegador suele enviar varias peticiones GET para recibir los datos que necesita para cargar la página.
+
+    HEAD. Con una petición HEAD, sólo recibes la información de la cabecera de la página que quieres cargar. 
+    Puedes utilizar este tipo de petición HTTP para conocer el tamaño de un documento antes de descargarlo mediante GET.
+
+    POST. Tu navegador utiliza el método de petición HTTP POST cuando necesita enviar datos al servidor. Por ejemplo, 
+    si rellenas un formulario de contacto en un sitio web y lo envías, estás utilizando una petición POST para que el servidor 
+    reciba esa información.
+
+    PUT. Las peticiones PUT tienen una funcionalidad similar a la del método POST. Sin embargo, en lugar de enviar datos, 
+    utilizas las peticiones PUT para actualizar información que ya existe en el servidor final.
+
+
+¿Qué es una API?
+
+Las API son mecanismos que permiten a dos componentes de software comunicarse entre sí mediante un conjunto de definiciones y protocolos. 
+Por ejemplo, el sistema de software del instituto de meteorología contiene datos meteorológicos diarios. 
+La aplicación meteorológica de su teléfono “habla” con este sistema a través de las API y le muestra las actualizaciones 
+meteorológicas diarias en su teléfono.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+¿Qué es el DOM?
+
+El modelo de objeto de documento (DOM) es una interfaz de programación para los documentos HTML y XML. 
+Facilita una representación estructurada del documento y define de qué manera los programas pueden acceder, al fin de modificar, 
+tanto su estructura, estilo y contenido. El DOM da una representación del documento como un grupo de nodos y objetos estructurados 
+que tienen propiedades y métodos. Esencialmente, conecta las páginas web a scripts o lenguajes de programación.
+
+document y window son objetos cuya interfaces son generalmente muy usadas en la programación de DOM. 
+En término simple, el objeto window representa algo como podría ser el navegador, y el objeto document es la raíz del documento en sí. 
+Element hereda de la interfaz genérica Node, y juntos, estas dos interfaces proporcionan muchos métodos y propiedades utilizables 
+sobre los elementos individuales. Éstos elementos pueden igualmente tener interfaces específicas según el tipo de datos representados, 
+como en el ejemplo anterior del objeto table. Lo siguiente es una breve lista de los APIS comunes en la web y en las páginas escritas 
+en XML utilizando el DOM.
+
+    document.getElementById(id)
+    element.getElementsByTagName(name)
+    document.createElement(name)
+    parentNode.appendChild(node)
+    element.innerHTML
+    element.style.left
+    element.setAttribute
+    element.element.getAttribute
+    element.addEventListener
+    window.content
+    window.onload
+    window.dump
+    window.scrollTo
+
+    
+
+    - document.getElementById
+
+    Nos permite obtener un elemento del DOM a través de su ID. Retorna un único nodo del HTML, porque solo en una página cada id debe ser único, 
+    es decir, no puede haber mas de un elemento con el mismo ID. Un ejemplo seria obtener el elemento con el id firstName, 
+    lo hacemos de la siguiente manera:
+
+    document.getElementById("firstName");
+
+
+    - document.getElementsByTagName
+
+    Nos permite obtener una lista (NodeList) con todos los nodos que tienen definida la etiqueta proporcionada.  
+    Es un método que puede traer 0, 1 o n Nodos. Un ejemplo seria obtener de nuestro documento todos los elemento que sean un span, 
+    lo hacemos de la siguiente manera:
+
+    document.getElementsByTagName("span");
+
+
+
+    - document.getElementByClassName
+
+    Funciona similar al anterior, pues nos retorna una lista, pero en este caso nos devuelve los nodos que entre sus clases contenga 
+    la especificada en el argumento del método, es decir, vamos a identificar una clase y traemos todos los elementos que contengan dicha clase, 
+    supongamos que queremos obtener todos los nodos que contengan la clase container, lo haríamos de la siguiente manera:
+
+    document.getElementsByClassName("container");
+
+
+
+    - document.querySelector
+
+    Nos permite obtener cualquier elemento del DOM de acuerdo al argumento que le indiquemos, podemos pasarle una cadena de caracteres 
+    que contiene uno o mas selectores CSS, estos deben ir separado por comas. Este método retorna el primer elemento que coincida con el filtro, 
+    es decir, si existen varios elementos que coincidan con la búsqueda este nos retornara el primero que encuentre. 
+    Si no encuentra ningún elemento retorna null. Veamos un ejemplo donde buscaremos un elemento que contenga la clase container.
+
+    document.querySelector(".container");
+
+    Como vemos debemos especificar el símbolo del selector, similar como ocurre en CSS, si queremos obtener por clase (".container"), 
+    ID (#container), etiqueta directamente (“h1”).
+
+
+
+    - document.querySelectorAll
+
+    Este método es casi igual al anterior a diferencia de que este devuelve una lista (NodeList) donde se encuentran 
+    todos los elementos que coincidan con el o los selectores indicados. Supongamos que queremos hacer la misma búsqueda del 
+    ejemplo del ítem anterior, obtener los elementos con la clase container
+
+    document.querySelectorAll(".container");
+
+    A diferencia del método anterior que nos devuelve la primera coincidencia, aquí vamos a obtener todos esos elementos que 
+    coincidan con el selector indicado.
+
+
