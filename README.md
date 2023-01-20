@@ -16,3 +16,16 @@ secuencia de comandos para hacer git push
 - Consulta: Cuales son los métodos mas comunes de DOM manipulation con Javascript.
 
 ![Resonsabilidad](Diseños/responsabilidad.webp)
+
+# Actividad para el 26 de enero
+
+-Consulta: Segun lo averiguado de manipulacion del DOM, consultar como pintar los datos de una API, en los elementos del html
+-Consulta: Como guardar un aAPI Key en una variable de entorno, y porque es mas seguro?
+-Consulta: Ques es GITIGNORE y como nos ayuda prevenir publicar datos sensibles (ED)
+-Consulta: Que es asincronismo en Js y que diferente metodos existen.
+-Consulta: que es callback help?
+-Consulta: Que es hoinsting, event bubbling,scope,prototype,use strict
+
+Ejercicios: Tratar de pintar una ciudad con la data real de la API
+Ejercicio: hacer un mobil media-query se renderice una card por linea y tablet de a dos, y en desktop 3
+Ejercicio: iniciar NPM en repositorio.

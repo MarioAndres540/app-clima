@@ -1,19 +1,39 @@
-html,
-body {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background-color: #f5e9e9;
-    position: relative;
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Roboto+Condensed:wght@300;400&display=swap');
+
+/*color variables*/
+:root {
+    --main-bg-color: #D3C9FA;
+  }
+  
+
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;*/
+h1,h2,h3,
+h4,h5,h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+body {
+    display: grid;
+    grid-template-areas: 
+            "aside main main"
+            "aside main main"
+            "footer footer footer";
+    grid-template-columns: 16.875rem 1fr 1fr;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /*structural styles begin*/
 .main-container {
-    flex-grow: 1;
-    flex-wrap: wrap;
+    grid-area: main;
     box-sizing: border-box;
-    padding: 2rem;
+    padding: 2rem 4rem;
+    
 }
 
 *, *:before, *:after {/*para consultar como se usa correctamente*/
@@ -25,16 +45,15 @@ body {
 left sidebar begin
 */
 .left-sidebar{
+    grid-area: aside ;
     width: 16.875rem;
-    border-radius: 20px;
-    border: outset 1px black;
-    margin-left: 1rem;   
-    box-shadow: 5px 5px 5px #3f3f3f;
- 
+    border-right: 1px solid #E8EDF0;
+    padding: 1rem;
 }
 
 .left-sidebar__logo img {
     width: 100%;
+    
 
 }
 
@@ -60,13 +79,12 @@ weather card begin
 .weather-card {
     display: flex;
     justify-content: space-between;
-    border-radius: 20px;
-    color: #ffffff;
-    background-color: #147ffa;
-   opacity: .7;
-    padding: .5rem;
+    border-radius: 5px;
+    color: #000000;
+    background-color: var(--main-bg-color);
+    padding: 1rem;
     margin: .5rem;
-    box-shadow: 5px 5px 5px #3f3f3f;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.07);
 }
 
 .weather-card__country {
@@ -100,7 +118,7 @@ weather card begin
 
 .weather-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
 
@@ -111,14 +129,22 @@ weather card end
 /*
 footer start
 */
-.footer-endPage {
-    background-color: black;
-    opacity: .7;
-    color: aliceblue;
 
-  
+.footer-endPage {
+
+    grid-area: footer;
+    background-color: black;
+    opacity: .8;
+    color: aliceblue;
 }
 
+.footer-endPage__contenedor {
+    align-items: center ;
+}
+.footer-endPage__parrafo {
+
+    text-align: center;
+}
 
 /*
 footer end
