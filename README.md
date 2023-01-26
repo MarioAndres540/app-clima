@@ -30,30 +30,3 @@ Ejercicios: Tratar de pintar una ciudad con la data real de la API = pendiente
 Ejercicio: hacer un mobil media-query se renderice una card por linea y tablet de a dos, y en desktop 3, ok
 Ejercicio: iniciar NPM en repositorio. ok
 
-@media (min-width: 400px) and (max-width: 599px){
-    .left-sidebar {
-        grid-template-areas: 
-        "aside"
-        "main "
-        "footer";
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-    }
-}
-
-@media (min-width: 400px) and (max-width: 768px){
-    .weather-section {
-        grid-template-columns: repeat(1,1fr);
-    }
-}
-
-@media (min-width:769px) and (max-width:1024px){
-    .weather-section {
-        grid-template-columns: repeat(2,1fr);
-    }
-}
-
-@media (min-width:1025px) and (max-width:1200px){
-    .weather-section {
-        grid-template-columns: repeat(3,1fr);
-    }
-}

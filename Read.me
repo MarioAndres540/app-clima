@@ -388,9 +388,28 @@ en XML utilizando el DOM.
 
     -----------------------------------------------------------------------------------------------------------
 
-****************************************Solcion actividad del 26 de enero************************************************
+****************************************Solucion actividad del 26 de enero************************************************
 
     1) esto lo realizamos con innerHTML, de esta forma llamamos los datos de html a js para que interactuen con la API que llamamos con el metodo fetch o segun el metodo utilizado
+
+    <body>
+    <h1 id="cabecera">Ejmplo dom con javascript</h1>
+
+
+    <p id="parrafo">parrafo manipulacion del dom</p>
+<!--NOTA: la lectura es de arriba para abajo en esta forma mostarar la informacion en la pagina-->
+    <script>
+        let cabecera = document.getElementById("cabecera");
+
+        cabecera.innerHTML = 'el nuevo valor ingresado por el dom en javaScript';
+
+        console.log(cabecera.innerHTML);
+
+        let parrafo = document.getElementById("parrafo").innerHTML;
+
+        console.log(parrafo);
+    </script>
+</body>
 --------------------------------------------------------------------------------------------------------------------------------------------    
     2) ¿Qué son las variables de entorno?
 
