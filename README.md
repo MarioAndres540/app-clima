@@ -19,13 +19,13 @@ secuencia de comandos para hacer git push
 
 # Actividad para el 26 de enero
 
--Consulta: Segun lo averiguado de manipulacion del DOM, consultar como pintar los datos de una API, en los elementos del html
--Consulta: Como guardar un aAPI Key en una variable de entorno, y porque es mas seguro?
--Consulta: Ques es GITIGNORE y como nos ayuda prevenir publicar datos sensibles (ED)
--Consulta: Que es asincronismo en Js y que diferente metodos existen.
--Consulta: que es callback help?
--Consulta: Que es hoinsting, event bubbling,scope,prototype,use strict
+-Consulta: Segun lo averiguado de manipulacion del DOM, consultar como pintar los datos de una API, en los elementos del html ok
+-Consulta: Como guardar un aAPI Key en una variable de entorno, y porque es mas seguro? ok
+-Consulta: Ques es GITIGNORE y como nos ayuda prevenir publicar datos sensibles (ED) ok
+-Consulta: Que es asincronismo en Js y que diferente metodos existen. ok
+-Consulta: que es callback help? ok
+-Consulta: Que es hoinsting, event bubbling,scope,prototype,use strict ok
 
-Ejercicios: Tratar de pintar una ciudad con la data real de la API
-Ejercicio: hacer un mobil media-query se renderice una card por linea y tablet de a dos, y en desktop 3
-Ejercicio: iniciar NPM en repositorio.
+Ejercicios: Tratar de pintar una ciudad con la data real de la API = pendiente
+Ejercicio: hacer un mobil media-query se renderice una card por linea y tablet de a dos, y en desktop 3, ok
+Ejercicio: iniciar NPM en repositorio. ok

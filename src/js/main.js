@@ -7,13 +7,34 @@ const options = {
 };
 
 
+const template = (props) => {
+	
+	return (
+		`
+		<div class="weather-card__location">
+			<h3 class="weather-card__country">${props.location.country}</h3>
+			<h2 class="weather-card__city">Medellin</h2>
+			<p class="weather-card__status">Thunder</p>
+		</div>
+		<div class="weather-card__temperature">
+			<img class="weather-card__icon" src="src/img/thunder_icon.png" alt="weather_icon">
+			<p class="weather-card__grades">20°c</p>
+		</div>
+		`
+	)
+}
 
     
 const fetchCityWeather = (city) => {
 
     fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${city}`, options)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(response => {
+		console.log( city ,response)
+		const $city = document.getElementById(city)
+		const toInner = template(response)
+		console.log('toInner', toInner)
+	})
 	.catch(err => console.error(err)); 
 }
 

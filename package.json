@@ -1,0 +1,23 @@
+{
+  "name": "app-clima",
+  "version": "1.0.0",
+  "description": "Proyecto app-clima",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarioAndres540/app-clima.git"
+  },
+  "keywords": [
+    "app-clima",
+    "api"
+  ],
+  "author": "Mario Andres Jaramillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarioAndres540/app-clima/issues"
+  },
+  "homepage": "https://github.com/MarioAndres540/app-clima#readme"
+}

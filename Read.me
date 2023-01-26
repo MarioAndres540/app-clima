@@ -3,6 +3,7 @@ secuencia de comandos para hacer git push
 1) git add .
 2) git commit -m "mensaje"
 3) git push
+4) git reset --hard el limpia culito
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -385,5 +386,540 @@ en XML utilizando el DOM.
 
     A diferencia del método anterior que nos devuelve la primera coincidencia, aquí vamos a obtener todos esos elementos que 
     coincidan con el selector indicado.
+
+    -----------------------------------------------------------------------------------------------------------------------------------
+
+    ****************************************Solcion actividad del 26 de enero************************************************
+
+    1) esto lo realizamos con innerHTML, de esta forma llamamos los datos de html a js para que interactuen con la API que llamamos con el metodo fetch o segun el metodo utilizado
+--------------------------------------------------------------------------------------------------------------------------------------------    
+    2) ¿Qué son las variables de entorno?
+
+Las variables de entorno son variables externas a nuestra aplicación que residen en el sistema operativo o en el contenedor de la aplicación que se está ejecutando. Una variable de entorno es simplemente un nombre asignado a un valor.
+
+Por convención, el nombre se escribe con mayúscula y los valores son cadenas de texto, por ejemplo: PORT=8080.
+
+Normalmente, nuestras aplicaciones requieren que se establezcan muchas variables de entorno para que funcionen. Al confiar en configuraciones externas, su aplicación se puede implementar fácilmente en diferentes entornos. Estos cambios son independientes de los cambios en el código, por lo que no requieren que su aplicación sea reconstruida.
+
+Los datos que cambian según el entorno en el que se ejecuta su aplicación deben configurarse como variables de entorno. Algunos ejemplos comunes son:
+
+Dirección y Puerto HTTP.
+Credenciales de Base de Datos.
+Ubicación de archivos y carpetas estáticos.
+Credenciales de API's externas.
+
+Utilizar archivos .env para guardar la variable de entorno con la api key
+
+.env son sin duda la forma más fácil y popular de gestionar las variables de entorno. La idea es sencilla: almacenas tus variables de entorno en un archivo llamado .env en la raíz de tu proyecto. La aplicación busca las variables en este archivo y las carga para utilizarlas durante el tiempo de ejecución. Este es el aspecto de un archivo típico de .env:
+
+ejemplo:
+VAR_UNO=SOME_KEY_HERE
+VAR_DOS=SOME_OTHER_KEY_HERE
+---------------------------------------------------------------------------------------------------------------------------------------------------
+3) Que es GITIGNORE?
+
+El archivo .gitignore es un archivo de texto que le dice a Git qué otros archivos y carpetas de un proyecto debe ignorar.
+
+Un archivo .gitignore local se coloca normalmente en el directorio de origen de un proyecto. También puedes crear un archivo .gitignore global y cualquier entrada que contenga será ignorada en todos tus repositorios Git por igual.
+
+Para crear un archivo .gitignore local, crea un archivo de texto y llámalo .gitignore (recuerda incluir el . al principio). Después edita el archivo como sea necesario. Cada línea nueva debería contener el archivo o carpeta que quieres que Git ignore.
+
+Las entradas en este archivo también pueden seguir un modelo similar.
+
+* se usa para encontrar coincidencias
+/ se usa para ignorar nombres de ruta relacionados con el archivo .gitignore
+# se usa para añadir comentarios al archivo .gitignore
+Este es un ejemplo de cómo se vería un archivo .gitignore:
+
+# Ignorar archivos del sistema de Mac
+.DS_store
+
+# Ignorar carpeta node_modules
+node_modules
+
+# Ignorar todos los archivos de texto
+*.txt
+
+# Ignorar archivos relacionados con claves de una API
+.env
+
+# Ignorar archivos de configuración SASS
+.sass-cache
+Para añadir o cambiar tu archivo .gitignore global, ejecuta el siguiente comando:
+
+git config --global core.excludesfile ~/.gitignore_global
+Esto creará el archivo  ~/.gitignore_global. Ahora puedes editar ese archivo de la misma manera que un archivo .gitignore local. Todos tus repositorios Git ignorarán los archivos y carpetas que aparecen enumerados en el archivo .gitignore global.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+4) asincronismo
+
+Resulta que JavaScript es un lenguaje de programación asincrono. Lo que quiere decir esto es que al ejecutar código JavaScript el hilo de ejecución continuará a pesar de encontrarse en situaciones en las que no obtenga un resultado inmediatamente. Por ejemplo, cuando hacemos el pedido de información a un servidor, la respuesta posiblemente demore un poco. Sin embargo, el hilo de ejecución de JavaScript continuará con las demás tareas que hay en el código.
+
+2. Callbacks
+Un callback es simplemente una función que se pasa como parametro a otra funcion. Nosotros podemos construir funciones que usen callbacks de la siguiente manera.
+
+function saludar(saludo){
+    saludo();
+}
+
+saludar(function(nombre) {
+    console.log(`Hola ${nombre}`)
+})
+Una función en JavaScript que tiene un callback es el setTimeout(). Esta función ejecuta el callback despúes de esperar cierto tiempo el cual también le pasamos como parámetro.
+
+// setTimeout(funcion, tiempo_ms);
+setTimeout(function(){
+    console.log('Hola')
+}, 2000);
+Esta función ejecuta el callback solo despúes de que hayan pasado 2000 milisegundos.
+
+Con ayuda de esta función podemos crear un código que nos permita visualizar la asincronia de JavaScript.
+
+// Usando función anonima
+console.log('A')
+setTimeout(function () {
+    console.log('B')
+}, 2000)
+console.log('C')
+/* Resultado del código anterior
+ A
+ C
+ B  Despues de 2 segundo*/
+La asincronia de JavaScript nos permite visualizar en consola la letra C mucho antes de la B, el cual demora 2 segundos. Como puedes ver la ejecución no se detiene dos segundos, esta continua y luego de dos segundos aparece C.
+
+Para tener un cierto control en el código asincrono de JavaScript existen las promesas, las cuales estudiaremos a continuación.
+
+3. Promesas
+Las promesas llegan a JavaScript en la versión 6 de EcmaScript. Una promesa es el objeto que representa un valor que estará disponeble ahora, en el futuro o quiza nunca. Entonces como no sabemos cuando estarán disponibles. Por esta razón dejamos preparado dentro de la promesa el código que se ejecutará cuando el resultado llegue o incluso cuando el resultado es un error.
+
+Podemos crear una promesa de la siguiente manera.
+
+let  x = 11
+const p = new Promise((resolve, reject) =>{
+    if(x == 10){
+        resolve('La variable es igual a 10');
+    }else{
+        reject('La variable no es igual a 10');
+    }
+});
+En la función flecha del código anterior tenemos dos parametros, el primer parámetro resolve es una función que recibe como parametro el objeto que queremos que devuelva cuando el código tuvo el resultado que esperamos. Mientras que reject es una función que toma como parametro el objeto que devolverá si obtenemos un error, en nuestro código asincronico.
+
+En resumen usando una promesa podemos recibir el resultado que necesita de una espera y ejecutar código luego de que el resultado llegue. Entonces probemos las promesas con el setTimeout.
+
+let mensaje = new Promise((resolve, reject)=>{
+    setTimeout(function () {
+        resolve('Este es el mensaje');
+    }, 2000);
+})
+De esta forma creamos un objeto promesa con el mensaje como resultado resolve favorable de la promesa que devolverá luego de 2 segundos. Ahora para controlar la promesa usamos el método then y catch que vienen junto con las promesas.
+
+mensaje.then(m =>{
+    console.log(m)  
+}).catch(function () {
+    console.log('error');
+})
+Entonces para capturar el resultado favorable de la promesa usamos then(). En nuestro caso se trata del mensaje que lo mostraremos usando un console.log(). Por otra parte el catch captura el resultado fallido o reject de la promesa. En nuestro caso no implementamos ninguno asi que nuestra función anonima dentro del catch no recibe ningun parametro y solo muestra el mensaje de error.
+
+Listo ya sabemos que una promesa es como un tipo de dato y es por este motivo que muchas funciones de JavaScript y/o de librerias externas cuyo resultado es asincrono osea que demorará un tiempo en llegar están inplementados en promesas. Uno de estos métodos es fetch.
+
+4. El método Fetch
+Este método nos permite hacer una petición a un API y es justamente un callback. Por lo que tenemos que recibirlo usando then y catch de la siguiente forma.
+
+let pokemones = fetch("https://pokeapi.co/api/v2/pokemon/1");
+
+pokemones.then(res => res.json())
+    .then(data => {
+        console.log(data.name);
+    }).catch(error => console.log(error))
+Esta es la forma que comunmente se utiliza a fetch pero hay que acomodarlo de tal manera que sea un poco más entendible.
+
+let pokemones = fetch("https://pokeapi.co/api/v2/pokemon/1");
+
+pokemones
+    .then(res => {
+        return res.json()
+    })
+    .then(data => {
+        console.log(data.name);
+    }).catch(error => console.log(error))
+Como puedes ver en el código anterior se pueden encadenar métodos then, pero se pueden hacer solo cuando el return del then anterior es una promesa. En este caso si nosotros vemos la implementación de json() veremos que este método devuelve una promesa. Por lo que el segundo then es la captura del resolve del json(). Asi que si intentamos descomponer más al código anterior tendríamos algo asi.
+
+// primera promesa
+let pokemones = fetch("https://pokeapi.co/api/v2/pokemon/1");
+
+// segunda promesa
+let respuesta = pokemones.then(res => {return res.json()});
+
+respuesta.then(data => {
+    console.log(data.name);
+})
+Entonces si nosotros quisieramos ejecutar el fetch de manera ordenada y sincrona para ver los cinco primeros pokemones podemos hacer lo siguiente.
+
+function obtener_pokemon(id){
+    let url = "https://pokeapi.co/api/v2/pokemon/" + id;
+    return fetch(url).then(res => {return res.json()});
+}
+
+
+obtener_pokemon(1).then(data => {
+    console.log(data.name);
+    return obtener_pokemon(2);
+}).then(data =>{
+    console.log(data.name);
+    return obtener_pokemon(3);
+}).then(data =>{
+    console.log(data.name);
+    return obtener_pokemon(4);
+}).then(data =>{
+    console.log(data.name);
+    return obtener_pokemon(5);
+}).then(data =>{
+    console.log(data.name);
+})
+5. Async Await
+Ahora veremos una de las mejores caracteristicas que salieron en la especificación 8 de EcmaScript. El popular async await. Usamos el async para definir una función donde se encontrará el await que nos permitirá esperar una promesa de tal forma que podamos volver nuestro código sincrono.
+
+function obtener_pokemon(id){
+    let url = "https://pokeapi.co/api/v2/pokemon/" + id;
+    return fetch(url).then(res => {return res.json()});
+}
+
+async function nombrar_pokemones() {
+    let pokemon1 = await obtener_pokemon(1);
+    console.log(pokemon1.name);
+}
+Usando el async await podemos lograr esto, que la variable espere por su resultado antes de ejecutar el console.log(). Y como podemos hacer que una variable espere podemos lograr incluso esto.
+
+async function nombrar_pokemones() {
+    for (let i = 1; i < 6; i++) {
+        let pokemon = await obtener_pokemon(i);
+        console.log(pokemon.name);
+    }
+}
+Como ves, el async await nos permite esperar el resolve de una promesa de tal manera que podamos obtener un resultado sincrono.
+
+O incluso podemos hacerlo usando forEach de la siguiente manera.
+
+function obtener_pokemones(){
+    let url = "https://pokeapi.co/api/v2/pokemon/";
+    return fetch(url).then(res => {return res.json()});
+}
+
+async function nombrar_pokemones() {
+    let pokemones = await obtener_pokemones();
+    pokemones.results.forEach(pokemon => {
+        console.log(pokemon.name)
+    })
+}
+En este caso lo que pedimos al api es una lista con los 20 primeros pokemones pero estos están como una lista de objetos dentro del objeto result en la respuesta json que obtendremos. Asi que usamos el forEach para recorrer cada elemento del objeto results. Sin embargo, muchas veces lo que buscaremos será llevar una lista de objetos directamente a un arreglo para eso existe el método map. El cual lo podemos utilizar de la siguiente forma.
+
+async function nombrar_pokemones() {
+    let pokemones = await obtener_pokemones();
+    let arregloPokemones = pokemones.results.map(pokemon => pokemon.name)
+    console.log(arregloPokemones)
+}
+El método map recibe una función flecha donde a partir del parametro que recibe que es cada elemento del results retorna lo que queremos que esté dentro del arreglo.
+
+La forma de capturar un error cuando usamos Async Await es haciendo uso de try-catch como en el siguiente ejemplo.
+
+try {
+    const data = await fetch('https://pokeapi.co/api/v2/pokemon/' + name); 
+} catch (error) {
+    console.log(error);
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+5) callback hell
+
+JavaScript es un lenguaje de programación muy poderoso que se distingue de los demás de muchos modos. No solamente se distingue porque es un lenguaje que nos permite programar tanto para el frontend como para el backend de la web, sino también porque se basa en eventos en vez de en cadenas.
+
+Esta base le permite a JavaScript crear asincronía, un concepto que se refiere a la habilidad de programar acciones que pueden ser ejecutadas en tiempos no inmediatos. Para ello, se utilizan promesas, condicionales y métodos de tiempo. es un fenómeno que surge de la asincronía de este lenguaje de programación.
+
+¿Qué es el callback hell en JavaScript?
+Antes de explicarte qué es el callback hell en JavaScript, te sugerimos leer nuestros posts sobre qué son las promesas en JavaScript y cómo anidar métodos en JavaScript. Estos dos te darán el contexto necesario para entender mejor este fenómeno.
+
+Nota: estudiar las promesas, como anidar metodos
+
+Supongamos que queremos hacer una llamada al servidor API. Para ello, se crea una promesa (promise 1) con una gestión de respuesta (response). Ahora, pensemos que queremos ejecutar una acción asincrónica distinta que depende de esta respuesta. Entonces, crearemos otra promesa (promise 2) anidada a la primera. Esta promesa, a su vez, debe gestionarse con un método then. Aquí hemos empezado un árbol de promesas que puede detenerse o continuar.
+
+Este ciclo de promesas puede continuar cada vez que queramos ejecutar una acción dependiente del resultado anterior y gestionarla. Este árbol de promesas se vería similar a las líneas de código que te mostramos a continuación, cada una ejecutando una acción individual, pero que impacta en las demás:
+
+// llamar al servidor
+
+p1.then (response => {
+
+// enviar los datos a la db
+
+p2.then (response2 {
+
+// recoger el resultado de la db y escribirlo en un log
+
+p3.then (response3 => {
+
+// cuando el log pasa de 3MB, subirlo a un s3
+
+p4.then (response4 => {
+
+p5.then (response5 => {
+
+}
+
+En las líneas de código anteriores, hemos hecho que los comportamientos que queremos ir gestionando se aniden, creando una dependencia de referencias eterna. A esta anidación de acciones la llamamos callback hell en JavaScript. Esta situación es tan conocida en el mundo de la programación que tiene su propia página web. Además, el proceso que nos lleva a ella se conoce como highway to callback hell. Por ello, te invitamos a leer la página callbackhell.com para conocer más sobre este fenómeno.
+
+La anidación de acciones a ejecutar o callback hell también puede suceder cuando usamos los condicionales if …else, que nos ayudan a plantear situaciones en las que una acción sucede si algo pasa y otra si esto no pasa. Para conocer más sobre este condicional, te invitamos a leer nuestro post sobre cómo usar if else else en JavaScript. Esta situación es relativamente fácil de romper cuando utilizamos if, pero no es el caso de las promesas.
+
+¿Qué hacer con el callback hell en JavaScript?
+Ahora que sabes qué es el callback hell en JavaScript, seguro que estás pensando en cómo evitar esta situación. La realidad es que hay muchos momentos en los que deberás anidar promesas o condicionales, porque solo así crearás cadenas de acciones asíncronas. Por ello, debes pensar en cómo resolver el callback hell, no en cómo evitarlo. Una de las maneras más populares de hacerlo es a través de los métodos async y await.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+6)  Que es hoinsting?
+
+El concepto de Hoisting fue pensado como una manera general de referirse a cómo funcionan los contextos de ejecución en JavaScript (específicamente las fases de creación y ejecución). Sin embargo, el concepto puede ser un poco confuso al principio.
+
+Conceptualmente, por ejemplo, una estricta definición de hoisting sugiere que las declaraciones de variables y funciones son físicamente movidas al comienzo del código, pero esto no es lo que ocurre en realidad. Lo que sucede es que las declaraciones de variables y funciones son asignadas en memoria durante la fase de compilación, pero quedan exactamente en dónde las has escrito en el código.
+
+Una de las ventajas en JavaScript de colocar (ponerlas en memoria) las declaraciones de funciones antes de ejecutar cualquier otro segmento de código es que permite utilizar una función antes de declararla en el código. Por ejemplo:
+
+function nombreDelGato(nombre) {
+  console.log("El nombre de mi gato es " + nombre);
+}
+
+nombreDelGato("Maurizzio");
+/*
+El resultado del código es: "El nombre de mi gato es Maurizzio"
+*/
+
+El código escrito arriba está escrito de la manera que sería esperada para que funcione. Ahora, veamos qué sucede cuando llamamos a la función antes de escribirla:
+
+nombreDelGato("Dumas");
+
+function nombreDelGato(nombre) {
+  console.log("El nombre de mi gato es " + nombre);
+}
+/*
+El resultado del código es: "El nombre de mi gato es Dumas"
+*/
+
+Como se puede observar, aunque primero llamamos a la función en el código, antes de que sea escrita, el código aún funciona. Esto sucede por la manera en la que el contexto de ejecución trabaja en JavaScript.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+- ?Evente bubbling:
+
+Para entender el concepto de bubbling, hay que hablar antes de los eventos
+
+Los eventos son la manera que tenemos de monitorizar el comportamiento de nuestros usuarios, por ejemplo al detectar cuando se hace click en un botón
+
+Para capturar esos eventos se utilizan los listeners, con la siguiente estructura
+
+el.addEventListener(event, () => {})
+Donde en este caso el event será del tipo click
+
+const el = document.getElementById('mi_boton')
+el.addEventListener('click', () => {
+  console.log('elemento clicado!')
+})
+Dicho esto, el bubbling y el capturing ocurre cuando esos eventos se propagan, por ejemplo aquí que tienes un botón dentro de otro botón y dentro de un div:
+
+<div id="mi_div">
+  <button id="mi_boton_1">
+    Boton 1
+    <button id="mi_boton_2">Boton 2</button>
+  </button>
+</div>
+document.getElementById('mi_boton_1').addEventListener('click', () => console.log('boton 1 clicado!'))
+document.getElementById('mi_boton_2').addEventListener('click', () => console.log('boton 2 clicado!'))
+document.getElementById('mi_div').addEventListener('click', () => console.log('div clicado!'))
+Si aprietas el botón 2, tendrás un evento del botón 2, luego uno del botón 1, y luego otro del div, y esto es el bubbling
+
+En realidad no porque los botones no pueden estar anidados, pero se entiende el concepto
+
+Lo contrario del bubbling es el capturing, es decir, es lo mismo pero el evento va en la dirección opuesta, nace en el elemento más general y se va propagando hasta llegar al elemento original
+
+Eso solo ocurre si lo especificamos en el listener
+
+document.getElementById('mi_boton_1').addEventListener('click', () => console.log('boton1 clicado!'), { capture: true })
+document.getElementById('mi_boton_2').addEventListener('click', () => console.log('boton2 clicado!'), { capture: true })
+document.getElementById('mi_div').addEventListener('click', () => console.log('div clicado!'), { capture: true })
+Pero quién quiere esto? Ni idea, lo habitual es evitar el bubbling de la siguiente manera:
+
+document.getElementById('mi_boton_1').addEventListener('click', e => {
+  e.stopPropagation()
+  console.log('boton 1 clicado!')
+})
+document.getElementById('mi_boton_2').addEventListener('click', e => {
+  e.stopPropagation()
+  console.log('boton 2 clicado!')
+})
+document.getElementById('mi_div').addEventListener('click', e => {
+  e.stopPropagation()
+  console.log('div clicado!')
+})
+Y si te preguntas cómo hacer esto en React, pues sería así
+
+import React, { useRef } from 'react'
+
+const log = (e, msg) => {
+  e.stopPropagation()
+  console.log(msg)
+}
+
+export const App = () => {
+  const div = useRef()
+  const button = useRef()
+
+  return (
+    <div ref={div} onClick={e => log(e, 'yo también!')}>
+      <h1>Hola</h1>
+      <button ref={button} onClick={e => log(e, 'clicando!')}>
+        clica!
+      </button>
+    </div>
+  )
+}
+
+export default App
+
+-scope?:
+
+El scope puede definirse como el alcance que una variable tendrá en tu código. En otras palabras, el scope decide a qué variables tienes acceso en cada parte del código. Existen dos tipos de scope, el scope global y el scope local. 
+
+Qué es el Scope Local
+
+Cuando puedes acceder a una variable únicamente en cierta parte del código, se dice que esa variable está declarada en el scope local. Estas también son conocidas como variables locales. Un ejemplo de esto es cuando una variable está declarada dentro de un bloque o una función. Si tratas de acceder a esta variable fuera de esta función o bloque, tendrás un error que dirá que la variable no está definida.
+
+unction platzi() {
+	const soyEstudiante = true;
+	console.log(soyEstudiante);
+}
+
+platzi(); // true
+console.log(soyEstudiante); // soyEstudiante is not defined
+
+Qué es el Scope Global
+
+Se dice que una variable está en el sope global cuando está declarada fuera de una función o de un bloque. También son conocidas como variables globales. Puedes acceder a este tipo de variables desde cualquier parte de tu código, ya sea dentro o fuera de una función.
+
+const soyEstudiante = true;
+
+function platzi() {
+	console.log(soyEstudiante);
+}
+
+platzi(); //true
+console.log(soyEstudiante); //true
+A pesar de que JavaScript nos permite declarar una variable como global, no es una buena práctica. Una de las razones es porque tenemos la posibilidad de declarar dos variables globales en distintas partes del código con el mismo nombre sin notarlo.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+-prototype?:
+
+Los prototipos son un mecanismo mediante el cual los objetos en JavaScript heredan características entre sí
+
+JavaScript es un lenguaje basado en prototipos, por lo tanto entender el objeto prototype es uno de los conceptos más importantes que los profesionales de JavaScript necesitan saber. 
+
+Objeto prototype
+En honor a la claridad, vamos a examinar el siguiente ejemplo:
+
+function Punto2D(x, y) {
+  this.x = x;
+  this.y = y;
+}
+Al declararse la función Punto2D, una propiedad predeterminada llamada  prototype será creada para ella (ten en cuenta que, en JavaScript, una función es también un objeto). La propiedad prototype es un objeto que contiene una propiedad constructor y su valor es la función Punto2D: Punto2D.prototype.constructor = Punto2D. Y cuando tú llamas a Punto2D con la palabra reservada new, los objetos recién creados heredarán todas las propiedades de Punto2D.prototype. Para verificar esto, puedes agregar un método llamado mover en  Punto2D.prototype de la siguiente manera:
+
+Punto2D.prototype.mover  = function(dx, dy) {
+  this.x += dx;
+  this.y += dy;
+}
+
+var p1 = new Point2D(1, 2);
+p1.mover (3, 4);
+console.log(p1.x); // 4
+console.log(p1.y); // 6
+El Point2D.prototype es llamado objeto prototipo o prototipo del objeto p1 y de cualquier otro objeto creado con la sintaxis new Point2D(...) . Puedes agregar tantas propiedades al objeto Point2D.prototype como quieras. Lo que suele hacerse es declarar métodos en Point2D.prototype y otras propiedades se declararán en la función constructora.
+
+Los objetos integrados en JavaScript se construyen de manera similar. Por ejemplo:
+
+El prototipo de los objetos creados con la sintaxis new Object() o {} es Object.prototype
+El prototipo de los arreglos creados con la sintaxis new Array() o [] es Array.prototype
+Y es igual con otros objetos integrados como Date y RegExp.
+Object.prototype es heredado por todos los objetos y no tiene prototipo (su prototipo es null)
+
+Cadena de prototipos
+
+El mecanismo de la cadena del prototipo es simple: cuando accede a una propiedad p en el objeto obj, el motor de JavaScript buscará esta propiedad dentro del objeto obj. Si el motor falla en la búsqueda, continúa buscando en el prototipo de objeto obj y así sucesivamente hasta llegar a Object.prototype. Si finalizada la búsqueda no se ha encontrado nada, el resultado será undefined. Por ejemplo:
+
+var obj1 = {
+  a: 1,
+  b: 2
+};
+
+var obj2 = Object.create(obj1);
+obj2.a = 2;
+
+console.log(obj2.a); // 2
+console.log(obj2.b); // 2
+console.log(obj2.c); // undefined
+En el fragmento de código anterior, la declaración var obj2 = Object.create(obj1) creará el objeto obj2 con el objeto prototipo obj1. En otras palabras, obj1  se convierte en el prototipo de obj2 en lugar de Object.prototype por defecto. Como puedes ver,  bno es una propiedad de obj2, pero puedes acceder a ella a través de la cadena de prototipos. Sin embargo, para la propiedad c,  se obtiene un valor undefined porque no se puede encontrar en obj1 y en Object.prototype.
+
+Clases
+
+En ES2016, ahora podemos usar la palabra clave Class , así como los métodos mencionados anteriormente para manipular el prototype. Las clases de JavaScript son atractivas para los desarrolladores con experiencia en programación orientada a objetos, pero esencialmente hace lo mismo que el anterior.
+
+class Rectangle {
+  constructor(height, width) {
+    this.height = height
+    this.width = width
+  }
+
+  get area() {
+    return this.calcArea()
+  }
+
+  calcArea() {
+    return this.height * this.width
+  }
+}
+
+const square = new Rectangle(10, 10)
+
+console.log(square.area) // 100
+Esto es básicamente lo mismo que:
+
+function Rectangle(height, width) {
+  this.height = height
+  this.width = width
+}
+
+Rectangle.prototype.calcArea = function calcArea() {
+  return this.height * this.width
+}
+Los métodos getter y setter en las clases vinculan una propiedad Object a una función que será llamada cuando se busque esa propiedad. Esto es solo azúcar sintáctico para ayudar a que sea más fácil buscar o establecer propiedades.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+-use strict?:
+
+La "use strict"directiva era nueva en ECMAScript versión 5.
+
+No es una declaración, sino una expresión literal, ignorada por versiones anteriores de JavaScript.
+
+El propósito de "use strict"es indicar que el código debe ejecutarse en "modo estricto".
+
+Con el modo estricto, no puede, por ejemplo, usar variables no declaradas.
+
+Declaración de modo estricto
+
+El modo estricto se declara agregando "uso estricto"; al comienzo de un script o una función.
+
+Declarado al comienzo de una secuencia de comandos, tiene un alcance global (todo el código de la secuencia de comandos se ejecutará en modo estricto):
+
+Ejemplo
+"use strict";
+x = 3.14;       // This will cause an error because x is not declared
+
 
 
