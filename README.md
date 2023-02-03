@@ -4,6 +4,19 @@ secuencia de comandos para hacer git push
 2) git commit -m "mensaje"
 3) git push
 
+*******
+npm install webpack webpack-cli -D / nos serive para instalar webpack y cli nos permite ejecutar los comandos desde la terminal
+
+npm install -g webpack / para instalar webpack de forma global
+
+npm install --save-dev @babel/core @babel/preset-env / 
+
+npm install --save-dev babel-loader /
+
+npm install --save-dev css-loader style-loader / 
+
+npm install --save-dev sass-loader node-sass / nos ayuda a instlar los paquetes de sass
+
 *Tip:* Antes de empezar cualquier cambio, hacer ``git pull`` para traer los cambios que hayan en el remote del repositorio.
 
 # Actividad para 19 de Enero
@@ -29,4 +42,5 @@ secuencia de comandos para hacer git push
 Ejercicios: Tratar de pintar una ciudad con la data real de la API = pendiente
 Ejercicio: hacer un mobil media-query se renderice una card por linea y tablet de a dos, y en desktop 3, ok
 Ejercicio: iniciar NPM en repositorio. ok
+
 
