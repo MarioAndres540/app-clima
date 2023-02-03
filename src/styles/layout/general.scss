@@ -1,0 +1,22 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $titles-font;
+}
+
+/*structural styles begin*/
+.main-container {
+    grid-area: main;
+    box-sizing: border-box;
+    padding: 2rem 4rem;
+}
+
+*,
+*:before,
+*:after {
+    /*para consultar como se usa correctamente*/
+    box-sizing: inherit;
+}

@@ -1,0 +1,22 @@
+.left-sidebar {
+    grid-area: aside;
+    width: 16.875rem;
+    border-right: 1px solid #e8edf0;
+    padding: 1rem;
+}
+
+.left-sidebar__logo img {
+    width: 100%;
+}
+
+.left-sidebar__menu {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.left-sidebar__nav-item {
+    color: #3f3f3f;
+    padding: 1rem;
+    margin: 0.5rem 0;
+}

@@ -1,0 +1,71 @@
+.weather-card {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    color: #000000;
+    background-color: $main-bg-color;
+    padding: 1rem;
+    margin: 0.5rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.07);
+}
+
+.weather-card__country {
+    margin: 0;
+}
+
+.weather-card__city {
+    margin: 0;
+}
+
+.weather-card__status {
+    margin: 0;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-card__grades {
+    margin: 0;
+    display: flex;
+    justify-content: end;
+}
+
+.weather-card__icon {
+    width: 6rem;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-block-end: 1rem;
+    align-items: flex-start;
+}
+
+.weather-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 300px) and (max-width: 599px) {
+    .weather-section {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    .weather-section {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .weather-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .weather-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
