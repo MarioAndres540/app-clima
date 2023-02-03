@@ -43,4 +43,8 @@ Ejercicios: Tratar de pintar una ciudad con la data real de la API = pendiente
 Ejercicio: hacer un mobil media-query se renderice una card por linea y tablet de a dos, y en desktop 3, ok
 Ejercicio: iniciar NPM en repositorio. ok
 
+# Actividad para el 9 de febrero
+
+crear servidor, compilar el sass en un punto css, utilizar  variables de entorno
+
 
