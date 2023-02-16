@@ -47,4 +47,18 @@ Ejercicio: iniciar NPM en repositorio. ok
 
 crear servidor, compilar el sass en un punto css, utilizar  variables de entorno
 
+# repasar conceptos visto y de javascript
+Const, let, var
+tipos de dtos en javascript
+falsy y truthy values
+scope
+declara objetos en js
+funciones flecha
+spreat y rest operator
+metodos de arry
+
+
+
+
+
 
