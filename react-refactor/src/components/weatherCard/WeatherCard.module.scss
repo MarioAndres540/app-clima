@@ -1,0 +1,41 @@
+@import "./../../variables.scss";
+
+.weatherCard {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    color: #000000;
+    background-color: $main-bg-color;
+    padding: 1rem;
+    margin: 0.5rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.07);
+}
+
+.weatherCardCountry {
+    margin: 0;
+}
+
+.weatherCardCity {
+    margin: 0;
+}
+
+.weatherCardStatus {
+    margin: 0;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.weatherCardGrades {
+    margin: 0;
+    display: flex;
+    justify-content: end;
+}
+
+.weatherCardIcon {
+    width: 6rem;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-block-end: 1rem;
+    align-items: flex-start;
+}
