@@ -7,13 +7,6 @@ h6 {
     font-family: $titles-font;
 }
 
-/*structural styles begin*/
-.main-container {
-    grid-area: main;
-    box-sizing: border-box;
-    padding: 2rem 4rem;
-}
-
 *,
 *:before,
 *:after {
